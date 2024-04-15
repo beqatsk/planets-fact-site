@@ -1,6 +1,6 @@
 import data from "../data.json";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -10,9 +10,19 @@ export default function Header() {
         {data.map((planet, index) => {
           return (
             <Li key={index}>
-              <Link to={`/${planet.name}`} style={{ color: "white" }}>
+              <NavLink
+                to={`/${planet.name}`}
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "white" : "white",
+                    opacity: isActive ? "" : "0.75",
+                    fontWeight: isActive ? "bold" : "",
+                    fontSize: isActive ? "14px" : "11px",
+                  };
+                }}
+              >
                 {planet.name}
-              </Link>
+              </NavLink>
             </Li>
           );
         })}
@@ -44,12 +54,8 @@ const NavList = styled.div`
 `;
 const Li = styled.li`
   font-family: Spartan;
-  font-size: 11px;
-  font-weight: bold;
   line-height: 2.27;
   letter-spacing: 1px;
-  opacity: 0.75;
-  color: white;
   list-style: none;
   && :link {
     text-decoration: none;

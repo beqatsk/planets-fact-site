@@ -3,12 +3,11 @@ import styled from "styled-components";
 import { useParams } from "react-router";
 
 export default function Planet() {
-  //   const results = [
-  //     "ROTATION TIME",
-  //     "REVOLUTION TIME",
-  //     "RADIUS",
-  //     "AVERAFE TEMP.",
-  //   ];
+  const results = [
+    "01 OVERVIEW",
+    "02 INTERNAL STRUCTURE",
+    "03 SURFACE GEOLOGY",
+  ];
   const params = useParams();
   const planetName = params.planet;
   const planetObj = data.find((item) => item.name === planetName);
@@ -24,9 +23,9 @@ export default function Planet() {
         <ConatinerSide>
           <PlanetName>{planetObj?.name}</PlanetName>
           <PlanetTitle>{planetObj?.overview.content}</PlanetTitle>
-          <PlanetContent> 01 OVERVIEW</PlanetContent>
-          <PlanetContent> 02 INTERNAL STRUCTURE</PlanetContent>
-          <PlanetContent> 03 SURFACE GEOLOGY</PlanetContent>
+          {results.map((item) => {
+            return <PlanetContent>{item}</PlanetContent>;
+          })}
         </ConatinerSide>
       </Container>
       <InfoCardWrapper>
