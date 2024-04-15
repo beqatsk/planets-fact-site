@@ -11,8 +11,8 @@ body {
   min-height: 100vh;
   padding: 4px 0 0;
   background-color: #070724;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 }

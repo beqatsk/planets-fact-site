@@ -25,8 +25,9 @@ const HeaderDiv = styled.div`
   padding: 22px 32px 27px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 100px;
   border-bottom: 1px solid #444242;
-  /* opacity: 0.2; */
 `;
 const Headericon = styled.h2`
   font-family: Antonio;
