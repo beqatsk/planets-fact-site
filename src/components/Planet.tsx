@@ -9,7 +9,7 @@ export default function Planet() {
   return (
     <>
       <Container>
-        <div></div>
+        <img src={planetObj?.images.planet} alt="" />
 
         <ConatinerSide>
           <PlanetName>{planetObj?.name}</PlanetName>
@@ -25,13 +25,20 @@ export default function Planet() {
 const Container = styled.div`
   width: 100%;
   margin-top: 20px;
-  /* margin: 50px; */
+
   border: 1px solid red;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 150px;
 `;
+// const PlanetImage = styled.div`
+//   width: 290px;
+//   height: 290px;
+//   background-image: url(/images/Mercury.png);
+//   background-position: center;
+//   background-size: cover;
+// `;
 const ConatinerSide = styled.div`
   display: flex;
   flex-direction: column;
