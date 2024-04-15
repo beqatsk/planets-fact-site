@@ -26,7 +26,7 @@ const HeaderDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 300px;
+  flex-wrap: wrap;
   border-bottom: 1px solid #444242;
 `;
 const Headericon = styled.h2`
