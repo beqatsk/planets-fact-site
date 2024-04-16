@@ -19,7 +19,7 @@
     "temperature": "430°c",
     "images": {
       "planet": "/images/Mercury.png",
-      "internal": "./assets/planet-mercury-internal.svg",
+      "internal": "/images/MercuryStr.png",
       "geology": "./assets/geology-mercury.png"
     }
   },
@@ -43,7 +43,7 @@
     "temperature": "471°c",
     "images": {
       "planet": "/images/Venus.png",
-      "internal": "./assets/planet-venus-internal.svg",
+      "internal": "/public/images/VenusStr.png",
       "geology": "./assets/geology-venus.png"
     }
   },
@@ -67,7 +67,7 @@
     "temperature": "16°c",
     "images": {
       "planet": "/images/Earth.png",
-      "internal": "./assets/planet-earth-internal.svg",
+      "internal": "/images/EarthStr.png",
       "geology": "./assets/geology-earth.png"
     }
   },
@@ -91,7 +91,7 @@
     "temperature": "-28°c",
     "images": {
       "planet": "/images/Mars.png",
-      "internal": "./assets/planet-mars-internal.svg",
+      "internal": "/images/MarsStr.png",
       "geology": "./assets/geology-mars.png"
     }
   },
@@ -115,7 +115,7 @@
     "temperature": "-108°c",
     "images": {
       "planet": "/images/Jupiter.png",
-      "internal": "./assets/planet-jupiter-internal.svg",
+      "internal": "/public/images/NeptuneStr.png",
       "geology": "./assets/geology-jupiter.png"
     }
   },
@@ -139,7 +139,7 @@
     "temperature": "-138°c",
     "images": {
       "planet": "/images/Saturn.png",
-      "internal": "./assets/planet-saturn-internal.svg",
+      "internal": "/images/SaturnStr.png",
       "geology": "./assets/geology-saturn.png"
     }
   },
@@ -163,7 +163,7 @@
     "temperature": "-195°c",
     "images": {
       "planet": "/images/Uranus.png",
-      "internal": "./assets/planet-uranus-internal.svg",
+      "internal": "/images/UranusStr.png",
       "geology": "./assets/geology-uranus.png"
     }
   },
@@ -187,7 +187,7 @@
     "temperature": "-201°c",
     "images": {
       "planet": "/images/Neptune.png",
-      "internal": "./assets/planet-neptune-internal.svg",
+      "internal": "/public/images/NeptuneStr.png",
       "geology": "./assets/geology-neptune.png"
     }
   }

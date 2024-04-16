@@ -36,9 +36,11 @@ export default function Planet() {
     <>
       <Container>
         <img
-          src={planetObj?.images.planet}
+          src={
+            structure ? planetObj?.images.internal : planetObj?.images.planet
+          }
           alt="planets"
-          style={{ width: "300px", height: "300px" }}
+          //   style={{ width: "300px", height: "300px" }}
         />
         <ConatinerSide>
           <PlanetName>{planetObj?.name}</PlanetName>
