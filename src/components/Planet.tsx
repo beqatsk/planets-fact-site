@@ -1,16 +1,37 @@
 import data from "../data.json";
 import styled from "styled-components";
 import { useParams } from "react-router";
+import { useState } from "react";
 
 export default function Planet() {
-  const results = [
-    "01 OVERVIEW",
-    "02 INTERNAL STRUCTURE",
-    "03 SURFACE GEOLOGY",
-  ];
+  //   const results = [
+  //     "01 OVERVIEW",
+  //     "02 INTERNAL STRUCTURE",
+  //     "03 SURFACE GEOLOGY",
+  //   ];
+  const [overview, setOverview] = useState<boolean>(true);
+  const [structure, setStructure] = useState<boolean>(false);
+  const [geology, setGeology] = useState<boolean>(false);
+
   const params = useParams();
   const planetName = params.planet;
   const planetObj = data.find((item) => item.name === planetName);
+  const handleClick = () => {
+    setOverview(!overview);
+    setStructure(false);
+    setGeology(false);
+  };
+  const handleClickStr = () => {
+    setStructure(!structure);
+    setOverview(true);
+    setGeology(false);
+  };
+  const handleClickGeo = () => {
+    setGeology(!geology);
+    setOverview(true);
+    setStructure(false);
+  };
+
   return (
     <>
       <Container>
@@ -19,13 +40,24 @@ export default function Planet() {
           alt="planets"
           style={{ width: "300px", height: "300px" }}
         />
-
         <ConatinerSide>
           <PlanetName>{planetObj?.name}</PlanetName>
-          <PlanetTitle>{planetObj?.overview.content}</PlanetTitle>
-          {results.map((item) => {
-            return <PlanetContent>{item}</PlanetContent>;
-          })}
+          <PlanetTitle
+            overview={overview}
+            structure={structure}
+            geology={geology}
+          >
+            {overview ? "" : planetObj?.overview.content}
+            {structure ? planetObj?.structure.content : ""}
+            {geology ? planetObj?.geology.content : ""}
+          </PlanetTitle>
+
+          {/* {results.map((item, index) => {
+            return <PlanetContent key={index}>{item}</PlanetContent>;
+          })} */}
+          <PlanetContent onClick={handleClick}>01 OVERVIEW</PlanetContent>
+          <PlanetContent onClick={handleClickStr}>02 STRUCTURE</PlanetContent>
+          <PlanetContent onClick={handleClickGeo}>03 GEOLOGY</PlanetContent>
         </ConatinerSide>
       </Container>
       <InfoCardWrapper>
@@ -70,7 +102,11 @@ const PlanetName = styled.h1`
   font-weight: 500;
   color: white;
 `;
-const PlanetTitle = styled.p`
+const PlanetTitle = styled.p<{
+  overview: boolean;
+  structure: boolean;
+  geology: boolean;
+}>`
   max-width: 350px;
   font-family: Spartan;
   font-size: 14px;
