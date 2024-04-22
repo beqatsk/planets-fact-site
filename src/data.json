@@ -20,7 +20,7 @@
     "images": {
       "planet": "/images/Mercury.png",
       "internal": "/images/MercuryStr.png",
-      "geology": "./assets/geology-mercury.png"
+      "geology": "/public/images/MercuryGeo.png"
     }
   },
   {
@@ -187,7 +187,7 @@
     "temperature": "-201°c",
     "images": {
       "planet": "/images/Neptune.png",
-      "internal": "/public/images/NeptuneStr.png",
+      "internal": "/images/NeptuneStr.png",
       "geology": "./assets/geology-neptune.png"
     }
   }

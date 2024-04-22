@@ -37,10 +37,18 @@ export default function Planet() {
       <Container>
         <img
           src={
-            structure ? planetObj?.images.internal : planetObj?.images.planet
+            overview
+              ? planetObj?.images.planet
+              : structure
+              ? planetObj?.images.internal
+              : planetObj?.images.geology
           }
           alt="planets"
-          //   style={{ width: "300px", height: "300px" }}
+          style={
+            structure
+              ? { width: "150px", height: "300px" }
+              : { width: "300px", height: "300px" }
+          }
         />
         <ConatinerSide>
           <PlanetName>{planetObj?.name}</PlanetName>
@@ -88,10 +96,9 @@ const Container = styled.div`
   margin-top: 20px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 200px;
 `;
 const ConatinerSide = styled.div`
   display: flex;
